@@ -2,8 +2,8 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="A7F26CA1-2000-4729-896E-0BBE9E380635" Version="2.0.6.0" Language="en-US" Publisher="SergeyAntonov" />
-        <DisplayName>HgSccPackage</DisplayName>
-        <Description xml:space="preserve">Mercurial source code control package</Description>
+        <DisplayName>HgSccPackage VS2022</DisplayName>
+        <Description xml:space="preserve">Mercurial source code control package for Microsoft Visual Studio 2022</Description>
         <MoreInfo>https://bitbucket.org/zzsergant/hgsccpackage/wiki/Home</MoreInfo>
         <License>COPYING.txt</License>
         <ReleaseNotes>ReleaseNotes.rtf</ReleaseNotes>
@@ -11,16 +11,17 @@
         <Tags>Source Control;Mercurial</Tags>
     </Metadata>
     <Installation InstalledByMsi="false">
-        <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[11.0,)" />
-        <InstallationTarget Id="ElvisDesigner" Version="[3.3,)" />
+        <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[17.0,18.0)">
+            <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
     </Installation>
     <Dependencies>
-        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.8,)" />
     </Dependencies>
     <Assets>
         <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
     </Assets>
     <Prerequisites>
-        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,)" DisplayName="Visual Studio core editor" />
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[17.0,18.0)" DisplayName="Visual Studio core editor" />
     </Prerequisites>
 </PackageManifest>
